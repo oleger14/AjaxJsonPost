@@ -1,7 +1,7 @@
 <?php
-postData = json_decode($_POST['json']);
-
-var_dump(postData)
+$postData = file_get_contents('php://input'); 
+$data = json_decode($postData, true); 
+var_dump($data['name'])
 
 
 ?>
