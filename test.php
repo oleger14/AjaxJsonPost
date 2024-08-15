@@ -1,7 +1,9 @@
 <?php
-$postData = file_get_contents('php://input'); 
-$data = json_decode($postData, true); 
-var_dump($data['name'])
 
 
+$jsonDataPosted = json_decode(file_get_contents('php://input'), true);
+if ($jsonDataPosted!== null) {
+    $output = array("responseType" => "success", "response" => $jsonDataPosted);
+} 
+print json_encode($output);
 ?>
