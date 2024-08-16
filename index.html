@@ -10,30 +10,13 @@
         Name: <input id="name" type="text" name="name"><br>
         Email: <input id="email" type="text" name="email"><br>
         Password: <input id="password" type="text" name="password"><br>
+       
         <input id="submit" type="button" name="submit" value="submit">
     </form>
-    
+    <p class="result"></p>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script>
-    $(function(){
-        $("#mForm").submit(function() {
-            var formData = {
-               "name":$("#name").val(), 
-               "email":$("#email").val(), 
-               "password":$("#password").val(), 
-            };
-            $.ajax({
-                url:'test.php',
-                type:'POST',
-                data:'jsonData=' + $.toJSON(formData),
-                success: function(res) {
-                    alert(res);
-                }
-            });
-            return false;
-        });
-    });
-   
+    
     $(document).ready(function(){
         $("#submit").on('click', function(){
             $.ajax({
